@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>YM23 - Oficial</title>
+  <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/bootstrap-grid.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/9fa0f078e1.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav-menu bg-dark">
+      <a href="/" class="logo"><img src="./images/logo.svg" alt="Page logo" width="130px"></a>
+      <div class="modal">
+      <ul class="menu">
+        <div class="box-close"><a class="btn-close"><span>&#10005;</span></a></div>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="sobre_mi.html">Sobre mí</a></li>
+        <li><a href="/proyectos.html">Proyectos</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      </div>
+      <button class="burger">
+        <div class="line-burger-one"></div>
+        <div class="line-burger-two"></div>
+        <div class="line-burger-three"></div>
+      </button>
+  </nav>
+
+  <div class="container pt-5">
+    <div class="button-group filters-button-group pt-5">
+      <button class="button is-checked" data-filter="*">Mostrar todo</button>
+      <button class="button" data-filter=".animaciones">animaciones</button>
+      <button class="button" data-filter=".diseño">diseño</button>
+      <button class="button" data-filter=".web">web</button>
+    </div>
+    <section class="projects">
+      <div class="row">
+         
+        <div class="element-item web col-lg-4 col-md-6 col-6 my-4">
+          <a href="/" class="text-decoration">
+            <div class="card" data-category="web">
+              <img src="./images/000000000634867.jpg" alt="" class="img-fluid">
+              <div class="card-overlay">
+                <h5>Titulo por poner</h5>
+                <h4>Cliente por mostrar</h4>
+                
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="element-item diseño col-lg-4 col-md-6 col-6 my-4" data-category="diseño">
+          <a href="/" class="text-decoration">
+            <div class="card">
+              <img src="./images/0364747476.jpg" alt="" class="img-fluid">
+              <div class="card-overlay">
+                <h5>Titulo por poner</h5>
+                <h4>Cliente por mostrar</h4>
+                
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="element-item animaciones col-lg-4 col-md-6 col-6 my-4" data-category="animaciones">
+          <a href="/" class="text-decoration">
+            <div class="card">
+              <img src="./images/035544157dsasd.jpg" alt="" class="img-fluid">
+              <div class="card-overlay">
+                <h5>Titulo por poner</h5>
+                <h4>Cliente por mostrar</h4>
+                
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="line-footer"></div>
+  <footer>
+    <div class="brand-page">
+      <a href=""><img src="./images/logo.svg" width="100px" alt="Page logo"></a>
+      <p>Tengo muchos desafíos por delante, pienso cómo enfrentarlos</p>
+    </div>
+    <div class="box-social-media">
+      <div class="title-social-media"><h4>Sígueme</h4></div>
+      <ul class="social-media">
+        <li><a href=""><i class="fab fa-github"></i></a></li>
+        <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+    
+  </footer>
+  <div class="info-footer">Copyright ©2019 All rights reserved | This template was made by YM23</div>
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/isotope-docs.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+  const filterElements = () => {
+    var iso = new Isotope( '.row', {
+      itemSelector: '.element-item',
+      layoutMode: 'fitRows'
+    });
+    
+    var filterFns = {
+      numberGreaterThan50: function( itemElem ) {
+        var number = itemElem.querySelector('.number').textContent;
+        return parseInt( number, 10 ) > 50;
+      },
+      ium: function( itemElem ) {
+        var name = itemElem.querySelector('.name').textContent;
+        return name.match( /ium$/ );
+      }
+    };
+    
+    var filtersElem = document.querySelector('.filters-button-group');
+    filtersElem.addEventListener( 'click', function( event ) {
+      if ( !matchesSelector( event.target, 'button' ) ) {
+        return;
+      }
+      var filterValue = event.target.getAttribute('data-filter');
+      filterValue = filterFns[ filterValue ] || filterValue;
+      iso.arrange({ filter: filterValue });
+    });
+    
+    var buttonGroups = document.querySelectorAll('.button-group');
+    for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
+      var buttonGroup = buttonGroups[i];
+      radioButtonGroup( buttonGroup );
+    }
+    
+    function radioButtonGroup( buttonGroup ) {
+      buttonGroup.addEventListener( 'click', function( event ) {
+        if ( !matchesSelector( event.target, 'button' ) ) {
+          return;
+        }
+        buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
+        event.target.classList.add('is-checked');
+      });
+    }
+  }
+  filterElements();
+  </script>
+</body>
+</html>

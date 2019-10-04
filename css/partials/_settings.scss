@@ -1,0 +1,163 @@
+// Fonts
+$font: 'Oswald', sans-serif;
+$font2: 'Monserrat', sans-serif;
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+$gray: #efefef;
+$red: #F7082B;
+$green: rgb(42, 211, 56);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+
+h2 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+
+h3 {
+  font-size: 1.6em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+
+h4 {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+
+h5 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000000;
+}
+
+p {
+  font-size: 1em;
+  color: #000000;
+  padding: 10px;
+}
+
+.bg-white {
+  background: #ffffff;
+}
+
+.bg-dark {
+  background: #000000;
+}
+
+.bg-red {
+  background: #F7082B;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.text-decoration {
+  text-decoration: none;
+}
+
+.title {
+  width: 50%;
+  margin: 0 auto;
+  border-left: 2px solid #000000;
+  border-right: 2px solid #000000;
+  text-align: center;
+}
+
+.title-white {
+  width: 50%;
+  margin: 0 auto 15px auto;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  text-align: center;
+}
+.button {
+  display: block;
+  padding: 10px 18px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background: transparent;
+  border: 1px solid $red;
+  border-radius: 3px;
+  color: $black;
+  font-size: .8;
+  cursor: pointer;
+  transition: .3s ease;
+}
+.button:hover {
+  background-color: $black;
+  color: $red;
+}
+.button:active,
+.button.is-checked {
+  background-color: $black;
+  color: $red;
+}
+.button.is-checked {
+  color:$red;
+}
+.button-group {
+  display: flex;
+}
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .title {
+    width: 90%;
+  }
+}
